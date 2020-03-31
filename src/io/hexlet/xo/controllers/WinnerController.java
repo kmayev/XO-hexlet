@@ -25,5 +25,7 @@ public class WinnerController {
 
         }
     }
-    private boolean check (final Field field)
+    private boolean check (final Field field, final Point p1, final Point p2, final Point p3) {
+
+        }
 }
