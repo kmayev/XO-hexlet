@@ -4,7 +4,7 @@ import io.hexlet.xo.model.Field;
 import io.hexlet.xo.model.Figure;
 import io.hexlet.xo.model.Game;
 import io.hexlet.xo.model.Player;
-import view.ConsoleView;
+import io.hexlet.xo.view.ConsoleView;
 
 public class XOCLI {
     public static void main(final String[] args) {
