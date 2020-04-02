@@ -6,6 +6,7 @@ import io.hexlet.xo.controllers.WinnerController;
 import io.hexlet.xo.model.Field;
 import io.hexlet.xo.model.Figure;
 import io.hexlet.xo.model.Game;
+import io.hexlet.xo.model.exceptions.AlreadyOccupiedException;
 import io.hexlet.xo.model.exceptions.InvalidPointException;
 
 import java.awt.*;
@@ -39,7 +40,13 @@ public class ConsoleView {
         }
         System.out.format("Please enter new point for %S", currentFigure);
         final Point point = askPoint();
-        moveController.applyFigure(field, point, currentFigure);
+        try {
+            moveController.applyFigure(field, point, currentFigure);
+        } catch (InvalidPointException | AlreadyOccupiedException e) {
+            e.printStackTrace();
+            System.out.println("Point is invalid!");
+        }
+        return false;
     }
     private Point askPoint() {
         return new Point(askCoordinate("X")-1, askCoordinate("Y")-1);
