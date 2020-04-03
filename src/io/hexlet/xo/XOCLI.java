@@ -18,7 +18,7 @@ public class XOCLI {
         final Game gameXO = new Game(players, new Field(3), "XO");
         final ConsoleView consoleView = new ConsoleView();
         consoleView.show(gameXO);
-        while (consoleView.move(gameXO))1 {
+        while (consoleView.move(gameXO)) {
             consoleView.show(gameXO);
         }
     }
